@@ -27,14 +27,14 @@ The web server and RTSP daemon of the affected cameras include an hard-coded use
 In the following, we report the hard-coded accounts for 3S Vision and Asante network cameras, as these are the only device manufacturers that were contacted and replies to our inquiries.
 
 - 3S Vision cameras
-  * HTTP & RTSP account: "3sadmin:27988303"
+  * HTTP & RTSP account: *3sadmin:27988303*
 
 - Asante Voyager 1 network cameras
-  * HTTP account: "uniform:uic7799"
-  * RTSP account: "uicrd:xu06m3"
+  * HTTP account: **uniform:uic7799**
+  * RTSP account: **uicrd:xu06m3**
 
 - Asante Voyager 2 network cameras
-  * HTTP & RTSP account: "uicrd:xu06m3"
+  * HTTP & RTSP account: **uicrd:xu06m3**
 
 As the account is hard-coded in the web server and RTSP server binary files, it cannot be changed by end-users without upgrading the whole firmware image (or manually patching the executable files).
 
