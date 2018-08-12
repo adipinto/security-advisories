@@ -18,11 +18,11 @@ Other device models and firmware versions are probably also vulnerable, but they
 As required by the ISP that distributes this device to end-users, we do not disclose the full commercial name of the product, but only the manufacturer device model (i.e., Huawei B153).
 
 ## VULNERABILITY DETAILS
-To allow wireless users to easily authenticate to the WPA2 Wi-Fi network, the Huawei B153 device supports the WPS procotol [1]. The WPS "External Registrar" PIN-base method is notoriously insecure, as allows attackers to brute force the access PIN in few hours [2].
+To allow wireless users to easily authenticate to the WPA2 Wi-Fi network, the Huawei B153 device supports the WPS procotol [1]. The WPS *External Registrar* PIN-base method is notoriously insecure, as allows attackers to brute force the access PIN in few hours [2].
 
 In the default device configuration, the WPS daemon is configured to accept WPS PIN authentication attempts, but no WPS PIN is configured. Thus, the device is supposed to reject any possible PIN-based WPS request, allowing only the "push button" mechanism, that requires physical interaction.
 
-Unfortunately we detected that, despite no WPS PIN is actually configured, a specially-crafted WPS session can still force the device to complete the "External Registrar" handshake, returning to the attacker the current WPA2 passphrase. In other terms attackers located within the wireless range of the device can instantly recover the WPA passphrase. We would also like to stress out that this vulnerability is present in the default device configuration, and no user action is required.
+Unfortunately we detected that, despite no WPS PIN is actually configured, a specially-crafted WPS session can still force the device to complete the *External Registrar* handshake, returning to the attacker the current WPA2 passphrase. In other terms attackers located within the wireless range of the device can instantly recover the WPA passphrase. We would also like to stress out that this vulnerability is present in the default device configuration, and no user action is required.
 
 This attack cannot be exploited using publicly available tools: no "standard" WPS cracking tool performs handshakes using the specially-crafted WPS session required to exploit this security issue. As a consequence, we implemented our proof-of-concept as a small patch to the reaver WPS cracking tool [3] (the unmodified version of reaver *cannot* recover the password for this device).
 
