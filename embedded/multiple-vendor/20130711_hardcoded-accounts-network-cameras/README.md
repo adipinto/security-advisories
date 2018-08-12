@@ -4,12 +4,10 @@
 * *Title:*          Hard-coded accounts on multiple network cameras
 * *Discovery date:* 05/06/2013
 * *Release date:*   11/07/2013
+* *Class:*          Authentication bypass, command execution
 * *Credits:*
   * Roberto Paleari ([@rpaleari](https://twitter.com/rpaleari))
   * Alessandro Di Pinto ([@adipinto](https://twitter.com/adipinto))
-
-## VULNERABILITY INFORMATION
-*Class:*          Authentication bypass, command execution
 
 ## AFFECTED PRODUCTS
 We confirm the presence of the security vulnerability on the following
