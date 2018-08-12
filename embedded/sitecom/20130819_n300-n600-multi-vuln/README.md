@@ -21,11 +21,11 @@ In detail, affected firmware versions generate the default WPA2 key and access c
 
 Details about these vulnerabilities are given next.
 
-a) WPA2/admin password generation algorithm
+### WPA2/admin password generation algorithm
 
 The WPA2 passphrase and the password for the administrative web user are generated starting from the MAC address of the wireless interface card. Attackers located nearby the device (i.e., within the Wi-Fi network range) can calculate the default wireless password and access the device (if the passphrase has not been changed by the user). A Python implementation of the key generation algorithm is provided on Emaze blog (see the initial "Advisory information" section for the URL).
 
-b) Undocumented Telnet service
+### Undocumented Telnet service
 
 Unauthenticated remote users can enable the Telnet server by accessing the following (undocumented) URL:
 
@@ -33,9 +33,9 @@ Unauthenticated remote users can enable the Telnet server by accessing the follo
 
 This URL can be also accessed on the WAN side, allowing Internet-based attackers to enable the Telnet server. After activation, the service remains open until the next reboot. Additionally, due to the hard-coded credentials shown in the next paragraphs, attackers can easily login to the Telnet daemon.
 
-c) Hard-coded credentials
+### Hard-coded credentials
 
-A user can login to the Telnet service (with root privileges) using the hard-coded credential "admin:1234". This administrative account is hard-coded and cannot be changed by a normal user.
+A user can login to the Telnet service (with root privileges) using the hard-coded credential **admin:1234**. This administrative account is hard-coded and cannot be changed by a normal user.
 
 ## REMEDIATION
 Sitecom has promptly released updated firmware versions to address the Telnet issue. Patched software images are now distributed to end-users through the automatic firmware upgrade feature. The security patches have been included inside the following firmware versions:
